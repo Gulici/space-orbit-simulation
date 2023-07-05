@@ -29,8 +29,8 @@ public class Body extends Agent{
     }
 
     @Override
-    public void draw(Graphics2D g2, Position cameraPosition) {
+    public void draw(Graphics2D g2, Position cameraPosition, double screenScale) {
         g2.setColor(color);
-        super.draw(g2, cameraPosition);
+        super.draw(g2, cameraPosition, screenScale);
     }
 }

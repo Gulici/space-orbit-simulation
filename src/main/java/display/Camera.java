@@ -10,6 +10,8 @@ public class Camera {
         position = new Position(x,y);
     }
     public void update(Input input) {
+
+
         double x = position.getX();
         double y = position.getY();
 
@@ -31,7 +33,7 @@ public class Camera {
         position.setX(x);
         position.setY(y);
 
-        System.out.println(position.getX() + " "  + position.getY());
+        //System.out.println(position.getX() + " "  + position.getY());
     }
 
     public Position getPosition() {

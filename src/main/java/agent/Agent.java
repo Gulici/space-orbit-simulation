@@ -35,14 +35,19 @@ public abstract class Agent {
     public void handleMotion() {
         position.applyMotion(velocity);
     }
-    public void draw(Graphics2D g2, Position cameraPosition) {
+    public void draw(Graphics2D g2, Position cameraPosition, double screenScale) {
         //find position on screen
-        int x = position.getIntX();
-        int y = position.getIntY();
-        int screenX = x - cameraPosition.getIntX();
-        int screenY = y - cameraPosition.getIntY();
+        double x = position.getX();
+        double y = position.getY();
+        double screenX = (x - cameraPosition.getX()) * screenScale;
+        double screenY = (y - cameraPosition.getY()) * screenScale;
 
-        g2.fillOval(screenX, screenY, size , size);
+        int intScreenX = (int) Math.round(screenX);
+        int intScreenY = (int) Math.round(screenY);
+
+        int scaledSize = (int) Math.round(size * screenScale);
+
+        g2.fillOval(intScreenX, intScreenY, scaledSize , scaledSize);
     }
 
     public Position getCenterPosition() {

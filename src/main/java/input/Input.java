@@ -9,6 +9,9 @@ public class Input implements KeyListener {
     public boolean downPressed;
     public boolean leftPressed;
     public boolean rightPressed;
+    public boolean plusPressed;
+    public boolean minusPressed;
+
     @Override
     public void keyTyped(KeyEvent e) {
 
@@ -29,6 +32,12 @@ public class Input implements KeyListener {
         if (code==KeyEvent.VK_RIGHT){
             rightPressed = true;
         }
+        if (code==KeyEvent.VK_Q){
+            plusPressed = true;
+        }
+        if (code==KeyEvent.VK_W){
+            minusPressed = true;
+        }
     }
 
     @Override
@@ -45,6 +54,12 @@ public class Input implements KeyListener {
         }
         if (code==KeyEvent.VK_RIGHT){
             rightPressed = false;
+        }
+        if (code==KeyEvent.VK_Q){
+            plusPressed = false;
+        }
+        if (code==KeyEvent.VK_W){
+            minusPressed = false;
         }
     }
 }

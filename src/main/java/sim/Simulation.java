@@ -15,6 +15,7 @@ public class Simulation {
     private Input input;
     private Camera camera;
     private final double G = 0.0001; //6.6743 * Math.pow(10,-11);
+    private double screenScale = 1;
 
     public Simulation() {
         agents = new ArrayList<>();
@@ -56,6 +57,16 @@ public class Simulation {
         }
 
         handleCameraMovement();
+        handleZooming();
+    }
+
+    private void handleZooming() {
+        if (input.plusPressed) {
+            screenScale += 0.01;
+        }
+        if (input.minusPressed) {
+            screenScale -= 0.01;
+        }
     }
 
     private void handleCameraMovement() {
@@ -83,7 +94,6 @@ public class Simulation {
             force.normalize();
             force.multiply(accelValue);
             agent.setAcceleration(force);
-            //System.out.println("Acc: " + agent.getAccelerationValue());
         }
     }
 
@@ -96,5 +106,9 @@ public class Simulation {
     }
     public Position getCameraPosition() {
         return camera.getPosition();
+    }
+
+    public double getScreenScale() {
+        return screenScale;
     }
 }
