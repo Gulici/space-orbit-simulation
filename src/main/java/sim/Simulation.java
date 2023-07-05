@@ -2,17 +2,24 @@ package sim;
 
 import agent.Agent;
 import agent.Body;
+import core.Position;
 import core.Vector;
+import display.Camera;
+import input.Input;
 
 import java.util.ArrayList;
 
 public class Simulation {
 
     private ArrayList<Agent> agents;
+    private Input input;
+    private Camera camera;
     private final double G = 0.0001; //6.6743 * Math.pow(10,-11);
 
     public Simulation() {
         agents = new ArrayList<>();
+        input = new Input();
+        camera = new Camera(0,0);
 
         agents.add(new Body(700,500,100,1999999999));
 
@@ -47,6 +54,12 @@ public class Simulation {
         for (Agent agent : agents) {
             agent.update();
         }
+
+        handleCameraMovement();
+    }
+
+    private void handleCameraMovement() {
+        camera.update(input);
     }
 
     private void handleForces() {
@@ -76,5 +89,12 @@ public class Simulation {
 
     public ArrayList<Agent> getAgents() {
         return agents;
+    }
+
+    public Input getInput() {
+        return input;
+    }
+    public Position getCameraPosition() {
+        return camera.getPosition();
     }
 }

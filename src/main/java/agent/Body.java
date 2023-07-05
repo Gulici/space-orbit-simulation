@@ -1,5 +1,7 @@
 package agent;
 
+import core.Position;
+
 import java.awt.*;
 import java.util.Random;
 
@@ -27,8 +29,8 @@ public class Body extends Agent{
     }
 
     @Override
-    public void draw(Graphics2D g2) {
+    public void draw(Graphics2D g2, Position cameraPosition) {
         g2.setColor(color);
-        super.draw(g2);
+        super.draw(g2, cameraPosition);
     }
 }
