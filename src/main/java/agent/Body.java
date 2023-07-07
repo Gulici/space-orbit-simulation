@@ -1,5 +1,7 @@
 package agent;
 
+import core.Position;
+
 import java.awt.*;
 import java.util.Random;
 
@@ -20,15 +22,14 @@ public class Body extends Agent{
 
         //HSL random
         final float hue = rand.nextFloat();
-        // Saturation between 0.1 and 0.3
         final float saturation = (rand.nextInt(3000) + 1000) / 10000f; // saturation between x1 and x2
         final float luminance = 0.85f;
         color = Color.getHSBColor(hue, saturation, luminance);
     }
 
     @Override
-    public void draw(Graphics2D g2) {
+    public void draw(Graphics2D g2, int cameraX, int cameraY, double screenScale) {
         g2.setColor(color);
-        super.draw(g2);
+        super.draw(g2, cameraX, cameraY, screenScale);
     }
 }

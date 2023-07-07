@@ -1,12 +1,12 @@
 package display;
 
 import sim.Simulation;
-
 import javax.swing.*;
 
 public class Display extends JFrame {
 
     private final SimPanel simPanel;
+
     public Display(Simulation simulation) {
         setTitle("Gravity Simulation");
         setDefaultCloseOperation(EXIT_ON_CLOSE);

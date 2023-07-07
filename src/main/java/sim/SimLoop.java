@@ -47,7 +47,7 @@ public class SimLoop implements Runnable {
             fpsCounter++;
 
             if (timer >= 1000000000) {
-                System.out.println("TPS:" + tpsCounter + " FPS:" + fpsCounter);
+//                System.out.println("TPS:" + tpsCounter + " FPS:" + fpsCounter);
                 tpsCounter = 0;
                 fpsCounter = 0;
                 timer = 0;
