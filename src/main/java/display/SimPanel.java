@@ -10,12 +10,10 @@ import java.awt.*;
 public class SimPanel extends JPanel {
 
     Simulation simulation;
-    int height = 1000;
-    int width = 1000;
+    int height = 900;
+    int width = 900;
 
     public SimPanel(Simulation simulation) {
-        int height = 1000;
-        int width = 1000;
         this.simulation = simulation;
         setPreferredSize(new Dimension (width,height));
         setBackground(Color.BLACK);

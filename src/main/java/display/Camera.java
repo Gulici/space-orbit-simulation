@@ -6,11 +6,12 @@ import input.Input;
 public class Camera {
     private Position position;
     private final int cameraSpeed = 10;
+
     public Camera(double x, double y) {
         position = new Position(x,y);
     }
-    public void update(Input input) {
 
+    public void update(Input input) {
 
         double x = position.getX();
         double y = position.getY();
@@ -32,8 +33,6 @@ public class Camera {
 
         position.setX(x);
         position.setY(y);
-
-        //System.out.println(position.getX() + " "  + position.getY());
     }
 
     public Position getPosition() {
