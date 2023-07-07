@@ -40,10 +40,11 @@ public abstract class Agent {
         double x = position.getX();
         double y = position.getY();
 
-        double screenX = (x - cameraX) * screenScale;
-        double screenY = (y - cameraY) * screenScale;
+        //cameraXY center of the screen
+        //
 
-
+        double screenX = (x - cameraX ) * screenScale;
+        double screenY = (y - cameraY ) * screenScale;
 
         int intScreenX = (int) Math.round(screenX);
         int intScreenY = (int) Math.round(screenY);
